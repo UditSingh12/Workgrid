@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import { hashSync } from "bcryptjs";
 
+import { env } from "../config/env.js";
 import type {
   ActivityLog,
   AuthSession,
@@ -335,4 +336,216 @@ export function removeAuthSessionRecord(sessionId: string) {
 
   db.authSessions.splice(index, 1);
   deleteAuthSession(sessionId);
+}
+
+export function seedDemoWorkspaceIfNeeded() {
+  if (!env.DEMO_MODE || db.organizations.length > 0) {
+    return null;
+  }
+
+  const organization = createOrganizationRecord({
+    name: env.DEMO_WORKSPACE_NAME,
+    industry: "B2B Operations",
+    timezone: "Asia/Kolkata",
+    currency: "INR",
+    plan: "growth",
+  });
+
+  const owner = createUserRecord({
+    name: env.DEMO_OWNER_NAME,
+    email: env.DEMO_OWNER_EMAIL,
+    title: "Founder",
+    password: hashSync(env.DEMO_OWNER_PASSWORD, 10),
+  });
+
+  const manager = createUserRecord({
+    name: "Aarav Mehta",
+    email: "aarav@workgrid.app",
+    title: "Operations Manager",
+    password: hashSync("temporary-password", 10),
+  });
+
+  const analyst = createUserRecord({
+    name: "Nisha Kapoor",
+    email: "nisha@workgrid.app",
+    title: "Revenue Analyst",
+    password: hashSync("temporary-password", 10),
+  });
+
+  createMembershipRecord({
+    userId: owner.id,
+    organizationId: organization.id,
+    role: "owner",
+  });
+
+  createMembershipRecord({
+    userId: manager.id,
+    organizationId: organization.id,
+    role: "manager",
+  });
+
+  createMembershipRecord({
+    userId: analyst.id,
+    organizationId: organization.id,
+    role: "admin",
+  });
+
+  const clientOne = createClientRecord({
+    organizationId: organization.id,
+    name: "BluePeak Logistics",
+    status: "active",
+    accountManager: owner.name,
+  });
+
+  const clientTwo = createClientRecord({
+    organizationId: organization.id,
+    name: "Vector Health",
+    status: "lead",
+    accountManager: manager.name,
+  });
+
+  const archivedClient = createClientRecord({
+    organizationId: organization.id,
+    name: "Legacy Retail Account",
+    status: "active",
+    accountManager: analyst.name,
+  });
+
+  archiveClientRecord(archivedClient.id);
+
+  const projectOne = createProjectRecord({
+    organizationId: organization.id,
+    clientId: clientOne.id,
+    name: "Workflow Modernization",
+    status: "active",
+    ownerId: owner.id,
+    health: "good",
+  });
+
+  const projectTwo = createProjectRecord({
+    organizationId: organization.id,
+    clientId: clientTwo.id,
+    name: "Support Portal Launch",
+    status: "planned",
+    ownerId: manager.id,
+    health: "risk",
+  });
+
+  const archivedProject = createProjectRecord({
+    organizationId: organization.id,
+    clientId: clientOne.id,
+    name: "Legacy Export Migration",
+    status: "completed",
+    ownerId: analyst.id,
+    health: "good",
+  });
+
+  archiveProjectRecord(archivedProject.id);
+
+  const taskOne: Task = {
+    id: nanoid(),
+    organizationId: organization.id,
+    projectId: projectOne.id,
+    title: "Launch billing reconciliation flow",
+    status: "in_progress",
+    assigneeId: owner.id,
+    dueDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 10).toISOString(),
+  };
+
+  const taskTwo: Task = {
+    id: nanoid(),
+    organizationId: organization.id,
+    projectId: projectOne.id,
+    title: "Enable refresh-token rotation",
+    status: "review",
+    assigneeId: manager.id,
+    dueDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 6).toISOString(),
+  };
+
+  const taskThree: Task = {
+    id: nanoid(),
+    organizationId: organization.id,
+    projectId: projectTwo.id,
+    title: "Prepare implementation brief",
+    status: "backlog",
+    assigneeId: analyst.id,
+    dueDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 14).toISOString(),
+  };
+
+  const archivedTask: Task = {
+    id: nanoid(),
+    organizationId: organization.id,
+    projectId: archivedProject.id,
+    title: "Retire legacy export workflow",
+    status: "completed",
+    assigneeId: analyst.id,
+    dueDate: new Date(Date.now() - 1000 * 60 * 60 * 24 * 4).toISOString(),
+    deletedAt: new Date().toISOString(),
+  };
+
+  db.tasks.push(taskOne, taskTwo, taskThree, archivedTask);
+  persistTask(taskOne);
+  persistTask(taskTwo);
+  persistTask(taskThree);
+  persistTask(archivedTask);
+
+  const invoices: Invoice[] = [
+    {
+      id: nanoid(),
+      organizationId: organization.id,
+      clientId: clientOne.id,
+      projectId: projectOne.id,
+      amount: 280000,
+      currency: "INR",
+      status: "paid",
+      issuedAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 12).toISOString(),
+      dueAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 2).toISOString(),
+    },
+    {
+      id: nanoid(),
+      organizationId: organization.id,
+      clientId: clientTwo.id,
+      projectId: projectTwo.id,
+      amount: 200000,
+      currency: "INR",
+      status: "pending",
+      issuedAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 5).toISOString(),
+      dueAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 9).toISOString(),
+    },
+  ];
+
+  for (const invoice of invoices) {
+    db.invoices.push(invoice);
+    persistInvoice(invoice);
+  }
+
+  createActivityLog({
+    organizationId: organization.id,
+    actorName: owner.name,
+    action: "Created project",
+    entityType: "project",
+    entityName: projectOne.name,
+  });
+
+  createActivityLog({
+    organizationId: organization.id,
+    actorName: owner.name,
+    action: "Archived client",
+    entityType: "client",
+    entityName: archivedClient.name,
+  });
+
+  createActivityLog({
+    organizationId: organization.id,
+    actorName: "System",
+    action: "Verified CI pipeline",
+    entityType: "workspace",
+    entityName: "GitHub Actions",
+  });
+
+  return {
+    organizationName: organization.name,
+    email: env.DEMO_OWNER_EMAIL,
+    password: env.DEMO_OWNER_PASSWORD,
+  };
 }

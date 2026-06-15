@@ -1,11 +1,13 @@
 import type { NextFunction, Request, Response } from "express";
 
+import { recordRequest } from "../config/observability.js";
 import { logger } from "../config/logger.js";
 
 export function requestLogger(request: Request, response: Response, next: NextFunction) {
   const startedAt = Date.now();
 
   response.on("finish", () => {
+    recordRequest(request.route?.path ? `${request.baseUrl}${request.route.path}` : request.path, response.statusCode);
     logger.info("HTTP request completed", {
       requestId: response.locals.requestId as string | undefined,
       method: request.method,

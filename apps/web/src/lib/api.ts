@@ -88,6 +88,13 @@ export type DashboardPayload = {
   tasks: Array<{ id: string; title: string; status: string; dueDate: string }>;
 };
 
+export type DemoAccessPayload = {
+  enabled: boolean;
+  workspaceName: string | null;
+  email: string | null;
+  password: string | null;
+};
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const headers = new Headers(init?.headers);
 
@@ -117,6 +124,8 @@ function authHeaders(token: string) {
 }
 
 export const api = {
+  getDemoAccess: () =>
+    request<DemoAccessPayload>("/auth/demo"),
   getDashboard: (token: string) =>
     request<DashboardPayload>("/dashboard", {
       headers: authHeaders(token),

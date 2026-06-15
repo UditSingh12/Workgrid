@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: workgrid
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health/ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: SERVE_STATIC_FRONTEND
+        value: "true"
+      - key: CLIENT_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REFRESH_TOKEN_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: DEMO_MODE
+        value: "true"
+      - key: DEMO_WORKSPACE_NAME
+        value: Workgrid Demo Workspace
+      - key: DEMO_OWNER_NAME
+        value: Demo Operator
+      - key: DEMO_OWNER_EMAIL
+        value: demo@workgrid.app
+      - key: DEMO_OWNER_PASSWORD
+        sync: false

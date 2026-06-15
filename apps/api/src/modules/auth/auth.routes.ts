@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { authRateLimiter } from "../../middlewares/rate-limit.js";
+import { getDemoAccessController } from "./auth.demo.controller.js";
 import {
   loginController,
   logoutController,
@@ -10,6 +11,7 @@ import {
 
 const authRouter = Router();
 
+authRouter.get("/demo", getDemoAccessController);
 authRouter.post("/register", authRateLimiter, registerController);
 authRouter.post("/login", authRateLimiter, loginController);
 authRouter.post("/refresh", authRateLimiter, refreshController);

@@ -26,6 +26,8 @@ Workgrid helps B2B teams run delivery operations with secure tenant isolation, r
 - Role and permission guards for workspace modules
 - Clients, projects, tasks, billing, and activity management
 - Refresh-token auth with HTTP-only cookie flow
+- Optional demo workspace seeding for public showcase deployments
+- Health, readiness, liveness, and metrics endpoints for observability
 - Analytics widgets and polished dashboard UI
 - CI pipeline for tests, builds, and Docker verification
 
@@ -57,6 +59,14 @@ Open:
 
 - App: [http://localhost:5173](http://localhost:5173)
 - API: [http://localhost:4000/api](http://localhost:4000/api)
+
+## Portfolio Assets
+
+- Deployment guide: [docs/deployment-guide.md](docs/deployment-guide.md)
+- Demo video script: [docs/demo-video-script.md](docs/demo-video-script.md)
+- Resume project summary: [docs/resume-project-summary.md](docs/resume-project-summary.md)
+- Interview prep: [docs/interview-prep.md](docs/interview-prep.md)
+- Live demo checklist: [docs/live-demo-checklist.md](docs/live-demo-checklist.md)
 
 ## Product Screenshots
 
@@ -282,6 +292,7 @@ JWT_SECRET=replace-with-a-long-random-secret
 JWT_EXPIRES_IN=7d
 MONGODB_URI=mongodb://localhost:27017/workgrid
 SERVE_STATIC_FRONTEND=false
+DEMO_MODE=false
 ```
 
 ### 3. Start MongoDB
@@ -381,11 +392,13 @@ docker compose up -d --build
 ## Production Notes
 
 - Replace the default `JWT_SECRET`
+- Replace the default `REFRESH_TOKEN_SECRET`
 - Use MongoDB Atlas or a secured private Mongo instance
 - Put the app behind HTTPS in production
 - Restrict MongoDB network access
-- Add refresh tokens and HTTP-only cookies for stricter auth in the next phase
-- Add rate limiting and request logging for public deployment
+- Enable `DEMO_MODE` only for showcase environments
+- Use `/api/health/ready` for hosting health checks
+- Use `/api/health/metrics` for lightweight operational visibility
 
 ## Useful Commands
 

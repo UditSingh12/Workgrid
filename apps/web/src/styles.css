@@ -320,6 +320,18 @@ a {
   background: rgba(31, 66, 54, 0.05);
 }
 
+.demo-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(31, 66, 54, 0.06);
+  border: 1px solid rgba(31, 66, 54, 0.12);
+}
+
+.demo-card p {
+  margin: 10px 0 12px;
+}
+
 .card-header {
   margin-bottom: 14px;
 }

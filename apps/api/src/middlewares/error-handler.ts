@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { ZodError } from "zod";
 
+import { recordError } from "../config/observability.js";
 import { HttpError } from "../lib/http-error.js";
 
 export function errorHandler(
@@ -23,6 +24,8 @@ export function errorHandler(
       : message === "Invalid email or password" || message.includes("already exists")
         ? 400
         : 500;
+
+  recordError(message);
 
   response.status(statusCode).json({
     success: false,

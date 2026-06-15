@@ -16,6 +16,12 @@ vi.mock("../shared/session", () => ({
 
 vi.mock("../lib/api", () => ({
   api: {
+    getDemoAccess: vi.fn().mockResolvedValue({
+      enabled: false,
+      workspaceName: null,
+      email: null,
+      password: null,
+    }),
     login: vi.fn(),
     register: vi.fn(),
   },

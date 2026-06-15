@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { api } from "../lib/api";
+import { api, type DemoAccessPayload } from "../lib/api";
 import { useSession } from "../shared/session";
 import { SectionCard } from "../shared/components/section-card";
 import { StatusPanel } from "../shared/components/status-panel";
@@ -39,6 +39,11 @@ export function AuthPage() {
   const [loading, setLoading] = useState(false);
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [registerForm, setRegisterForm] = useState(initialRegisterState);
+  const [demoAccess, setDemoAccess] = useState<DemoAccessPayload | null>(null);
+
+  useEffect(() => {
+    api.getDemoAccess().then(setDemoAccess).catch(() => setDemoAccess(null));
+  }, []);
 
   async function handleLogin(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -236,6 +241,31 @@ export function AuthPage() {
             <li>Each workspace stays isolated through membership-aware API access and scoped permissions.</li>
             <li>If you want a completely clean local start, clear old demo Mongo records from earlier builds.</li>
           </ul>
+
+          {demoAccess?.enabled ? (
+            <div className="demo-card">
+              <strong>Public demo mode is enabled</strong>
+              <p>
+                Workspace: {demoAccess.workspaceName}
+                <br />
+                Email: {demoAccess.email}
+                <br />
+                Password: {demoAccess.password}
+              </p>
+              <button
+                className="inline-button inline-button-success"
+                type="button"
+                onClick={() =>
+                  setLoginForm({
+                    email: demoAccess.email ?? "",
+                    password: demoAccess.password ?? "",
+                  })
+                }
+              >
+                Use demo credentials
+              </button>
+            </div>
+          ) : null}
 
           {message ? <StatusPanel title="Success" tone="success">{message}</StatusPanel> : null}
           {error ? <StatusPanel title="Error" tone="danger">{error}</StatusPanel> : null}

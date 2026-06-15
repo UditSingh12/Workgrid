@@ -2,7 +2,7 @@ import mongoose, { Schema, model } from "mongoose";
 
 import { env } from "../config/env.js";
 import { logger } from "../config/logger.js";
-import { db } from "./mock-db.js";
+import { db, seedDemoWorkspaceIfNeeded } from "./mock-db.js";
 import type {
   ActivityLog,
   AuthSession,
@@ -179,6 +179,15 @@ export async function initializeDatabase() {
     ...((await ActivityLogModel.find().sort({ createdAt: -1 }).lean()) as unknown as ActivityLog[]),
   );
   db.authSessions.splice(0, db.authSessions.length, ...((await AuthSessionModel.find().lean()) as unknown as AuthSession[]));
+
+  const demoWorkspace = seedDemoWorkspaceIfNeeded();
+  if (demoWorkspace) {
+    logger.info("Demo workspace seeded", {
+      organizationName: demoWorkspace.organizationName,
+      email: demoWorkspace.email,
+    });
+  }
+
   logger.info("MongoDB state loaded into application memory", {
     organizations: db.organizations.length,
     users: db.users.length,
