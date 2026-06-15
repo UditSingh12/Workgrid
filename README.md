@@ -58,6 +58,192 @@ Open:
 - App: [http://localhost:5173](http://localhost:5173)
 - API: [http://localhost:4000/api](http://localhost:4000/api)
 
+## Product Screenshots
+
+### Overview dashboard
+
+![Workgrid overview dashboard](docs/assets/workgrid-overview.svg)
+
+### Client operations
+
+![Workgrid client workspace](docs/assets/workgrid-clients.svg)
+
+### Task execution
+
+![Workgrid task workspace](docs/assets/workgrid-tasks.svg)
+
+## Product Flow Diagram
+
+```mermaid
+flowchart LR
+    A[Owner or Team Member] --> B[Auth and Session Layer]
+    B --> C[Workspace Dashboard]
+    C --> D[Clients Module]
+    C --> E[Projects Module]
+    C --> F[Tasks Module]
+    C --> G[Billing Module]
+    D --> H[Create, Edit, Archive, Restore]
+    E --> H
+    F --> H
+    H --> I[Activity Logs]
+    H --> J[MongoDB Persistence]
+    G --> J
+```
+
+## System Design Diagram
+
+```mermaid
+flowchart TB
+    subgraph Frontend
+        UI[React + Vite SPA]
+        Router[Route Modules]
+        Session[Session Provider]
+    end
+
+    subgraph Backend
+        API[Express API]
+        Auth[JWT Access Tokens]
+        Refresh[HTTP-only Refresh Cookies]
+        Guards[Auth + Permission Guards]
+        Services[Clients, Projects, Tasks, Billing, Activity Services]
+    end
+
+    subgraph Data
+        Mongo[(MongoDB)]
+    end
+
+    subgraph DevOps
+        CI[GitHub Actions CI]
+        Docker[Docker and Compose]
+    end
+
+    UI --> Router
+    Router --> Session
+    Session --> API
+    API --> Auth
+    API --> Refresh
+    API --> Guards
+    Guards --> Services
+    Services --> Mongo
+    CI --> Docker
+    Docker --> API
+    Docker --> UI
+```
+
+## ER Diagram
+
+```mermaid
+erDiagram
+    ORGANIZATION ||--o{ MEMBERSHIP : has
+    USER ||--o{ MEMBERSHIP : joins
+    ORGANIZATION ||--o{ CLIENT : owns
+    ORGANIZATION ||--o{ PROJECT : owns
+    ORGANIZATION ||--o{ TASK : owns
+    ORGANIZATION ||--o{ INVOICE : owns
+    ORGANIZATION ||--o{ ACTIVITY_LOG : records
+    ORGANIZATION ||--|| SUBSCRIPTION : has
+    USER ||--o{ AUTH_SESSION : opens
+    MEMBERSHIP ||--o{ AUTH_SESSION : authorizes
+    CLIENT ||--o{ PROJECT : contains
+    PROJECT ||--o{ TASK : tracks
+    CLIENT ||--o{ INVOICE : billed_for
+    PROJECT o|--o{ INVOICE : may_bill
+
+    ORGANIZATION {
+      string id
+      string name
+      string slug
+      string plan
+      string industry
+      string timezone
+      string currency
+    }
+
+    USER {
+      string id
+      string name
+      string email
+      string title
+      string password_hash
+    }
+
+    MEMBERSHIP {
+      string id
+      string organizationId
+      string userId
+      string role
+      string[] permissions
+      string status
+    }
+
+    CLIENT {
+      string id
+      string organizationId
+      string name
+      string status
+      string accountManager
+      string deletedAt
+    }
+
+    PROJECT {
+      string id
+      string organizationId
+      string clientId
+      string name
+      string status
+      string health
+      string ownerId
+      string deletedAt
+    }
+
+    TASK {
+      string id
+      string organizationId
+      string projectId
+      string title
+      string status
+      string assigneeId
+      string dueDate
+      string deletedAt
+    }
+
+    INVOICE {
+      string id
+      string organizationId
+      string clientId
+      string projectId
+      number amount
+      string currency
+      string status
+    }
+
+    ACTIVITY_LOG {
+      string id
+      string organizationId
+      string actorName
+      string action
+      string entityType
+      string entityName
+    }
+
+    SUBSCRIPTION {
+      string organizationId
+      string plan
+      number seats
+      string status
+      string renewalDate
+    }
+
+    AUTH_SESSION {
+      string id
+      string userId
+      string organizationId
+      string membershipId
+      string refreshTokenHash
+      string expiresAt
+    }
+```
+
 ## Current Product Scope
 
 - Workspace onboarding and login

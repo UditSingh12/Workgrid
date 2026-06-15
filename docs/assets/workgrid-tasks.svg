@@ -1,0 +1,44 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="28" fill="#F0E8DB"/>
+  <rect x="34" y="30" width="1212" height="660" rx="30" fill="#FAF4EA"/>
+  <text x="72" y="96" fill="#C49A61" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="2">TASKS</text>
+  <text x="72" y="140" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Execution and Recovery Board</text>
+  <text x="72" y="176" fill="#687268" font-family="Segoe UI, Arial, sans-serif" font-size="19">Coordinate delivery work, manage lifecycle status, and recover archived tasks without losing project history.</text>
+  <rect x="72" y="222" width="540" height="400" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="104" y="268" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Task management</text>
+  <text x="104" y="298" fill="#687268" font-family="Segoe UI, Arial, sans-serif" font-size="16">Project-linked workflow controls</text>
+  <rect x="104" y="334" width="476" height="52" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="124" y="366" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">Workflow Modernization</text>
+  <rect x="104" y="412" width="476" height="52" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="124" y="444" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">Launch billing reconciliation flow</text>
+  <rect x="104" y="490" width="228" height="52" rx="16" fill="white" stroke="#DED3C4"/>
+  <rect x="352" y="490" width="228" height="52" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="124" y="522" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">In progress</text>
+  <text x="372" y="522" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">2026-06-30</text>
+  <rect x="104" y="566" width="476" height="56" rx="18" fill="url(#btn)"/>
+  <text x="271" y="601" fill="#FFF7EA" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Create task</text>
+  <rect x="640" y="222" width="564" height="188" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="672" y="268" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Current tasks</text>
+  <rect x="672" y="304" width="500" height="42" rx="14" fill="#F3F0E8"/>
+  <rect x="672" y="358" width="500" height="42" rx="14" fill="#F3F0E8"/>
+  <text x="694" y="331" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Launch billing reconciliation flow</text>
+  <text x="694" y="385" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Enable refresh-token rotation</text>
+  <text x="958" y="331" fill="#566159" font-family="Segoe UI, Arial, sans-serif" font-size="15">in progress</text>
+  <text x="996" y="385" fill="#566159" font-family="Segoe UI, Arial, sans-serif" font-size="15">review</text>
+  <rect x="640" y="434" width="564" height="188" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="672" y="480" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Archived tasks</text>
+  <rect x="672" y="516" width="500" height="42" rx="14" fill="#F5EEE1"/>
+  <rect x="672" y="570" width="500" height="42" rx="14" fill="#F5EEE1"/>
+  <text x="694" y="543" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Retire legacy export workflow</text>
+  <text x="694" y="597" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Archive unused support template</text>
+  <rect x="1042" y="525" width="98" height="24" rx="10" fill="#D8E8DE"/>
+  <rect x="1042" y="579" width="98" height="24" rx="10" fill="#D8E8DE"/>
+  <text x="1063" y="541" fill="#1B5A37" font-family="Segoe UI, Arial, sans-serif" font-size="13">Restore</text>
+  <text x="1063" y="595" fill="#1B5A37" font-family="Segoe UI, Arial, sans-serif" font-size="13">Restore</text>
+  <defs>
+    <linearGradient id="btn" x1="104" y1="566" x2="580" y2="622" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F4236"/>
+      <stop offset="1" stop-color="#173229"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,47 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="28" fill="#F3ECDE"/>
+  <rect x="34" y="30" width="1212" height="660" rx="30" fill="#FAF4EA"/>
+  <text x="72" y="96" fill="#C49A61" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="2">CLIENTS</text>
+  <text x="72" y="140" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Client Relationship Workspace</text>
+  <text x="72" y="176" fill="#687268" font-family="Segoe UI, Arial, sans-serif" font-size="19">Create, edit, archive, and restore customer accounts with tenant-level access control.</text>
+  <rect x="72" y="222" width="472" height="378" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="102" y="268" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Client operations</text>
+  <text x="102" y="298" fill="#687268" font-family="Segoe UI, Arial, sans-serif" font-size="16">Authenticated create and update flow</text>
+  <text x="102" y="352" fill="#465048" font-family="Segoe UI, Arial, sans-serif" font-size="17">Client name</text>
+  <rect x="102" y="366" width="410" height="54" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="122" y="400" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">BluePeak Logistics</text>
+  <text x="102" y="460" fill="#465048" font-family="Segoe UI, Arial, sans-serif" font-size="17">Status</text>
+  <rect x="102" y="474" width="410" height="54" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="122" y="508" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">Active</text>
+  <text x="102" y="568" fill="#465048" font-family="Segoe UI, Arial, sans-serif" font-size="17">Account manager</text>
+  <rect x="102" y="582" width="410" height="54" rx="16" fill="white" stroke="#DED3C4"/>
+  <text x="122" y="616" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="18">Udit Singh</text>
+  <rect x="574" y="222" width="630" height="200" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="606" y="268" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Active clients</text>
+  <rect x="606" y="304" width="566" height="42" rx="14" fill="#F3F0E8"/>
+  <rect x="606" y="358" width="566" height="42" rx="14" fill="#F3F0E8"/>
+  <text x="628" y="331" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">BluePeak Logistics</text>
+  <text x="814" y="331" fill="#566159" font-family="Segoe UI, Arial, sans-serif" font-size="15">active • owner: Udit Singh</text>
+  <rect x="1044" y="313" width="94" height="24" rx="10" fill="#D8E8DE"/>
+  <text x="1068" y="329" fill="#1B5A37" font-family="Segoe UI, Arial, sans-serif" font-size="13">Edit</text>
+  <text x="628" y="385" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Vector Health</text>
+  <text x="764" y="385" fill="#566159" font-family="Segoe UI, Arial, sans-serif" font-size="15">lead • owner: Aarav Mehta</text>
+  <rect x="946" y="367" width="94" height="24" rx="10" fill="#F1DDD9"/>
+  <text x="964" y="383" fill="#8E1F1F" font-family="Segoe UI, Arial, sans-serif" font-size="13">Archive</text>
+  <rect x="574" y="448" width="630" height="152" rx="26" fill="#FFF9EF" stroke="#E6DAC7"/>
+  <text x="606" y="494" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Archived clients</text>
+  <rect x="606" y="530" width="566" height="42" rx="14" fill="#F5EEE1"/>
+  <text x="628" y="557" fill="#1B2420" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600">Legacy Retail Account</text>
+  <text x="826" y="557" fill="#6A665B" font-family="Segoe UI, Arial, sans-serif" font-size="15">recoverable archived record</text>
+  <rect x="1028" y="539" width="110" height="24" rx="10" fill="#D8E8DE"/>
+  <text x="1052" y="555" fill="#1B5A37" font-family="Segoe UI, Arial, sans-serif" font-size="13">Restore</text>
+  <rect x="102" y="662" width="260" height="0" stroke="#000000" stroke-opacity="0"/>
+  <rect x="102" y="656" width="410" height="56" rx="18" fill="url(#btn)"/>
+  <text x="244" y="691" fill="#FFF7EA" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Create client</text>
+  <defs>
+    <linearGradient id="btn" x1="102" y1="656" x2="512" y2="712" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F4236"/>
+      <stop offset="1" stop-color="#173229"/>
+    </linearGradient>
+  </defs>
+</svg>

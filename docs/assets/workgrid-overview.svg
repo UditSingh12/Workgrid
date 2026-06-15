@@ -1,0 +1,82 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="28" fill="#EFE8DA"/>
+  <rect x="0" y="0" width="320" height="720" fill="#122018"/>
+  <text x="36" y="64" fill="#F5EBD9" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Workgrid</text>
+  <text x="36" y="94" fill="#D8BE94" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="2">B2B SAAS OPS</text>
+  <rect x="28" y="138" width="264" height="106" rx="20" fill="#1B3026" stroke="#355241"/>
+  <text x="48" y="177" fill="#F7F0E3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Northstar Ops</text>
+  <text x="48" y="206" fill="#CBBBA3" font-family="Segoe UI, Arial, sans-serif" font-size="14">Growth plan • Owner session</text>
+  <circle cx="52" cy="223" r="6" fill="#47A36D"/>
+  <text x="68" y="228" fill="#E9DDC8" font-family="Segoe UI, Arial, sans-serif" font-size="13">Secure workspace active</text>
+  <rect x="28" y="280" width="264" height="54" rx="16" fill="#D5B07A" fill-opacity="0.16"/>
+  <text x="50" y="314" fill="#F7E8D0" font-family="Segoe UI, Arial, sans-serif" font-size="18">Overview</text>
+  <text x="50" y="374" fill="#E8DDCA" font-family="Segoe UI, Arial, sans-serif" font-size="18">Clients</text>
+  <text x="50" y="430" fill="#E8DDCA" font-family="Segoe UI, Arial, sans-serif" font-size="18">Projects</text>
+  <text x="50" y="486" fill="#E8DDCA" font-family="Segoe UI, Arial, sans-serif" font-size="18">Tasks</text>
+  <text x="50" y="542" fill="#E8DDCA" font-family="Segoe UI, Arial, sans-serif" font-size="18">Billing</text>
+  <rect x="360" y="34" width="884" height="652" rx="28" fill="#F8F2E8"/>
+  <text x="402" y="88" fill="#C69A60" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="2">OVERVIEW</text>
+  <text x="402" y="132" fill="#1C2520" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">Operations Command Center</text>
+  <text x="402" y="168" fill="#647067" font-family="Segoe UI, Arial, sans-serif" font-size="20">Track delivery health, revenue flow, archived records, and live tenant activity.</text>
+  <rect x="402" y="214" width="192" height="134" rx="22" fill="url(#card1)"/>
+  <rect x="616" y="214" width="192" height="134" rx="22" fill="url(#card2)"/>
+  <rect x="830" y="214" width="192" height="134" rx="22" fill="url(#card3)"/>
+  <rect x="1044" y="214" width="158" height="134" rx="22" fill="url(#card4)"/>
+  <text x="426" y="252" fill="#6C5E47" font-family="Segoe UI, Arial, sans-serif" font-size="15">Workspace</text>
+  <text x="426" y="304" fill="#17231C" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700">Workgrid</text>
+  <text x="426" y="326" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="14">Growth plan workspace</text>
+  <text x="640" y="252" fill="#6C5E47" font-family="Segoe UI, Arial, sans-serif" font-size="15">Projects</text>
+  <text x="640" y="304" fill="#17231C" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">12</text>
+  <text x="640" y="326" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="14">7 active delivery streams</text>
+  <text x="854" y="252" fill="#6C5E47" font-family="Segoe UI, Arial, sans-serif" font-size="15">Tasks</text>
+  <text x="854" y="304" fill="#17231C" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">38</text>
+  <text x="854" y="326" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="14">Across all active projects</text>
+  <text x="1068" y="252" fill="#6C5E47" font-family="Segoe UI, Arial, sans-serif" font-size="15">Revenue</text>
+  <text x="1068" y="304" fill="#17231C" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">₹4.8L</text>
+  <text x="1068" y="326" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="14">Paid invoices</text>
+  <rect x="402" y="384" width="392" height="258" rx="24" fill="#FFF9F0" stroke="#E8DCC9"/>
+  <rect x="820" y="384" width="382" height="258" rx="24" fill="#FFF9F0" stroke="#E8DCC9"/>
+  <text x="430" y="424" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Delivery Analytics</text>
+  <text x="430" y="452" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="15">Project lifecycle distribution</text>
+  <text x="430" y="496" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="15">Planned</text>
+  <rect x="430" y="510" width="270" height="10" rx="999" fill="#E7E3DA"/>
+  <rect x="430" y="510" width="110" height="10" rx="999" fill="#4B8973"/>
+  <text x="710" y="520" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="14">3</text>
+  <text x="430" y="556" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="15">Active</text>
+  <rect x="430" y="570" width="270" height="10" rx="999" fill="#E7E3DA"/>
+  <rect x="430" y="570" width="190" height="10" rx="999" fill="#1F4236"/>
+  <text x="710" y="580" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="14">6</text>
+  <text x="430" y="616" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="15">Review</text>
+  <rect x="430" y="630" width="270" height="10" rx="999" fill="#E7E3DA"/>
+  <rect x="430" y="630" width="74" height="10" rx="999" fill="#D6A967"/>
+  <text x="710" y="640" fill="#314139" font-family="Segoe UI, Arial, sans-serif" font-size="14">2</text>
+  <text x="848" y="424" fill="#1E2821" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Activity Feed</text>
+  <text x="848" y="452" fill="#6D746F" font-family="Segoe UI, Arial, sans-serif" font-size="15">Recent tenant operations</text>
+  <rect x="848" y="478" width="326" height="46" rx="14" fill="#F2EEE4"/>
+  <rect x="848" y="536" width="326" height="46" rx="14" fill="#F2EEE4"/>
+  <rect x="848" y="594" width="326" height="46" rx="14" fill="#F2EEE4"/>
+  <text x="868" y="505" fill="#1F4236" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Udit Singh</text>
+  <text x="962" y="505" fill="#49544D" font-family="Segoe UI, Arial, sans-serif" font-size="15">archived client BluePeak Logistics</text>
+  <text x="868" y="563" fill="#1F4236" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Aarav Mehta</text>
+  <text x="974" y="563" fill="#49544D" font-family="Segoe UI, Arial, sans-serif" font-size="15">created project Workflow Modernization</text>
+  <text x="868" y="621" fill="#1F4236" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">System</text>
+  <text x="928" y="621" fill="#49544D" font-family="Segoe UI, Arial, sans-serif" font-size="15">CI verified tests, build, and Docker image</text>
+  <defs>
+    <linearGradient id="card1" x1="402" y1="214" x2="594" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#F7EEDC"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="616" y1="214" x2="808" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#F4EBDD"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="830" y1="214" x2="1022" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#F5EDDE"/>
+    </linearGradient>
+    <linearGradient id="card4" x1="1044" y1="214" x2="1202" y2="348" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#F5EDDE"/>
+    </linearGradient>
+  </defs>
+</svg>
