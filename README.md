@@ -76,17 +76,17 @@ Open:
 
 ```mermaid
 flowchart LR
-    A[Owner or Team Member] --> B[Auth and Session Layer]
-    B --> C[Workspace Dashboard]
-    C --> D[Clients Module]
-    C --> E[Projects Module]
-    C --> F[Tasks Module]
-    C --> G[Billing Module]
-    D --> H[Create, Edit, Archive, Restore]
+    A["Owner or Team Member"] --> B["Auth and Session Layer"]
+    B --> C["Workspace Dashboard"]
+    C --> D["Clients Module"]
+    C --> E["Projects Module"]
+    C --> F["Tasks Module"]
+    C --> G["Billing Module"]
+    D --> H["Create / Edit / Archive / Restore"]
     E --> H
     F --> H
-    H --> I[Activity Logs]
-    H --> J[MongoDB Persistence]
+    H --> I["Activity Logs"]
+    H --> J["MongoDB Persistence"]
     G --> J
 ```
 
@@ -95,26 +95,26 @@ flowchart LR
 ```mermaid
 flowchart TB
     subgraph Frontend
-        UI[React + Vite SPA]
-        Router[Route Modules]
-        Session[Session Provider]
+        UI["React and Vite SPA"]
+        Router["Route Modules"]
+        Session["Session Provider"]
     end
 
     subgraph Backend
-        API[Express API]
-        Auth[JWT Access Tokens]
-        Refresh[HTTP-only Refresh Cookies]
-        Guards[Auth + Permission Guards]
-        Services[Clients, Projects, Tasks, Billing, Activity Services]
+        API["Express API"]
+        Auth["JWT Access Tokens"]
+        Refresh["HTTP-only Refresh Cookies"]
+        Guards["Auth and Permission Guards"]
+        Services["Clients, Projects, Tasks, Billing, Activity Services"]
     end
 
     subgraph Data
-        Mongo[(MongoDB)]
+        Mongo[("MongoDB")]
     end
 
     subgraph DevOps
-        CI[GitHub Actions CI]
-        Docker[Docker and Compose]
+        CI["GitHub Actions CI"]
+        Docker["Docker and Compose"]
     end
 
     UI --> Router
@@ -172,7 +172,7 @@ erDiagram
       string organizationId
       string userId
       string role
-      string[] permissions
+      string permissions
       string status
     }
 
