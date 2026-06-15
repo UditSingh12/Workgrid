@@ -1,6 +1,62 @@
 # Workgrid
 
-Workgrid is a multi-tenant B2B SaaS admin platform built with React, Express, TypeScript, and MongoDB-ready persistence.
+Workgrid is a multi-tenant B2B SaaS operations platform for managing clients, projects, tasks, billing, team access, and workspace activity from a single admin console.
+
+## Hero
+
+Workgrid helps B2B teams run delivery operations with secure tenant isolation, role-aware access, soft-delete recovery, analytics dashboards, and production-style CI/CD foundations.
+
+**Core value**
+
+- Centralize client, project, task, billing, and activity operations in one workspace
+- Enforce workspace-aware permissions and authenticated access across every major route
+- Recover archived records safely with Mongo-backed soft delete and restore flows
+- Demonstrate production-minded engineering with testing, Docker, and GitHub Actions CI
+
+**Tech stack**
+
+- Frontend: React, TypeScript, Vite, React Router
+- Backend: Express, TypeScript, Zod, JWT auth, bcryptjs
+- Database: MongoDB with Mongoose-backed persistence
+- DevOps: Docker, Docker Compose, GitHub Actions, Vitest, Testing Library, Supertest
+
+**Highlights**
+
+- Multi-tenant onboarding with organization-scoped sessions
+- Role and permission guards for workspace modules
+- Clients, projects, tasks, billing, and activity management
+- Refresh-token auth with HTTP-only cookie flow
+- Analytics widgets and polished dashboard UI
+- CI pipeline for tests, builds, and Docker verification
+
+## Architecture Snapshot
+
+```text
+React + Vite frontend
+        |
+        v
+Express API layer
+        |
+        v
+Auth + permissions + validation
+        |
+        v
+MongoDB persistence layer
+```
+
+## Quick Start
+
+```bash
+npm install
+docker compose up mongo -d
+npm run dev:api
+npm run dev:web
+```
+
+Open:
+
+- App: [http://localhost:5173](http://localhost:5173)
+- API: [http://localhost:4000/api](http://localhost:4000/api)
 
 ## Current Product Scope
 
