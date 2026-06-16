@@ -2,6 +2,11 @@
 
 Workgrid is a multi-tenant B2B SaaS operations platform for managing clients, projects, tasks, billing, team access, and workspace activity from a single admin console.
 
+## Live Demo
+
+- Public app: [https://workgrid-82sw.onrender.com](https://workgrid-82sw.onrender.com)
+- Health check: [https://workgrid-82sw.onrender.com/api/health/ready](https://workgrid-82sw.onrender.com/api/health/ready)
+
 ## Hero
 
 Workgrid helps B2B teams run delivery operations with secure tenant isolation, role-aware access, soft-delete recovery, analytics dashboards, and production-style CI/CD foundations.
@@ -411,3 +416,7 @@ npm run start
 docker compose up --build
 docker compose down
 ```
+
+## Author
+
+**Udit Singh**
