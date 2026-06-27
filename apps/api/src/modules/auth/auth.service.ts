@@ -105,7 +105,7 @@ export function register(input: unknown) {
   createMembershipRecord({
     userId: user.id,
     organizationId: organization.id,
-    role: "owner",
+    role: payload.role,
   });
 
   return buildAuthResponse(payload.email);

@@ -144,6 +144,7 @@ export const api = {
     industry: string;
     timezone: string;
     currency: string;
+    role: "owner" | "admin" | "manager" | "viewer";
     plan: "starter" | "growth" | "enterprise";
   }) =>
     request<SessionData>("/auth/register", {

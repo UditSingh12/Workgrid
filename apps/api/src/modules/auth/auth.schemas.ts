@@ -9,6 +9,7 @@ export const registerSchema = z.object({
   industry: z.string().min(2),
   timezone: z.string().min(2),
   currency: z.string().min(3).max(3),
+  role: z.enum(["owner", "admin", "manager", "viewer"]),
   plan: z.enum(["starter", "growth", "enterprise"]),
 });
 

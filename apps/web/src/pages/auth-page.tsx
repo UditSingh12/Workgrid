@@ -16,6 +16,7 @@ type RegisterFormState = {
   industry: string;
   timezone: string;
   currency: string;
+  role: "owner" | "admin" | "manager" | "viewer";
   plan: "starter" | "growth" | "enterprise";
 };
 
@@ -28,6 +29,7 @@ const initialRegisterState: RegisterFormState = {
   industry: "",
   timezone: "Asia/Kolkata",
   currency: "INR",
+  role: "manager",
   plan: "growth",
 };
 
@@ -224,6 +226,23 @@ export function AuthPage() {
                   <option value="enterprise">Enterprise</option>
                 </select>
               </label>
+              <label>
+                Initial role
+                <select
+                  value={registerForm.role}
+                  onChange={(event) =>
+                    setRegisterForm({
+                      ...registerForm,
+                      role: event.target.value as "owner" | "admin" | "manager" | "viewer",
+                    })
+                  }
+                >
+                  <option value="owner">Owner</option>
+                  <option value="admin">Admin</option>
+                  <option value="manager">Manager</option>
+                  <option value="viewer">Teammate</option>
+                </select>
+              </label>
               <button className="primary-button" disabled={loading} type="submit">
                 {loading ? "Creating..." : "Create workspace"}
               </button>
@@ -236,8 +255,8 @@ export function AuthPage() {
           description="The platform is now designed to create the first real workspace instead of relying on seeded demo data."
         >
           <ul className="list">
-            <li>Register once to create your organization, owner account, and initial subscription record.</li>
-            <li>After that, log in using the same work email and password you created.</li>
+            <li>Register once to create your organization, initial membership, and subscription record.</li>
+            <li>Choose the first role carefully so the new workspace starts with the right level of access.</li>
             <li>Each workspace stays isolated through membership-aware API access and scoped permissions.</li>
             <li>If you want a completely clean local start, clear old demo Mongo records from earlier builds.</li>
           </ul>
